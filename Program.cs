@@ -27,11 +27,20 @@
             Console.WriteLine($"Result = {result}");
         }
 
+        static void RunSherlockValidString()
+        {
+            Console.WriteLine("Running the 'Sherlock and the Valid String' task");
+            SherlockValidString sher = new SherlockValidString();
+            string res = sher.Check("hyzzeohdidavrazjqqjfyulkoutdkywsyvrdlaitdirxkqicitijovtcpphcndwmzppmpziujzrtrcvavfjlceputwwhauvbjmnylvuuwopoqkonszzwdoqznognidorpbrazmwvaljsxzfpagmgxefktnxdqlvfoohnaflcquwnwcfwktchxhrsuqwmdtruhajkfumxplllnsjzlmjkvafqtdcywwsfycpewebnpoaegkftyoetrjjkookkmdrkhjodpstggtmpfridgoxxzijnwtziyrtfcjlrbexkxjzfcjiiafhzospmooxmhqsjzdadjzpiionnzyvzdfbtxqingfaqvuzwzcbkbqsmggziewjjbkfbcnqlsqbpmannerxghquqyvyerhpvuwywjojdhkutnkjrbizkavayqaekiwfesdaermjawgwjqfdtnefoaiosivcsrhwlmzpglbgjhctzjyuzeznehdzqybkrlhfxiwftxmceqxfcxzbczqigthyujjnusstapzvmnztfzahwaiabyjjusiqdtdznytnpukdjjyokzwhbgjehsndnxtqsyqfyjunferoqpcaqajtjtxsnlvakqrdqhipsfexjvnznrcfslzdewvujsuuilxyuhpomunyrazgsbmmplrthmnrekloxkouteiiawgryhyqjmeyxvtejjxpvkdswumqavaatgtrntkyfqycmujxdinytsspmfhmchmxpiqfdafjtenhyyedhrbcmvtyadlemzdcjujnuownulwsmbxvuyxgwshyvudktgmfcxsxnqmidlcpmakgajpwcwvzqajlixqlwkkkaysgjuvvugevrvtttovjoewzepkazwkcueiezfbvlhsdemyxctgtafsguegvatxuzhaynewanqfscephzyabduhzyqualuukbxlodhrqzwieaalcynddhnefdyfqsbawalmdudwuagycglegyklfxpmcq");
+            Console.WriteLine($"Result = {res}");
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Choose one of the problems:");
             Console.WriteLine("1 - Data Center");
             Console.WriteLine("2 - Lily's Homework");
+            Console.WriteLine("3 - Sherlock and the Valid String");
             Console.Write("> ");
             ConsoleKeyInfo key = Console.ReadKey();
             Console.WriteLine();
@@ -39,6 +48,7 @@
             {
                 case '1': RunDataCenter(); break;
                 case '2': RunLilysHomework(); break;
+                case '3': RunSherlockValidString(); break;
                 default: Console.WriteLine("Invalid choice");  break;
             }
         }
