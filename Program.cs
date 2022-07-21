@@ -27,11 +27,19 @@
             Console.WriteLine($"Result = {result}");
         }
 
+        static void RunThreading()
+        {
+            Console.WriteLine("Running the Threading task");
+            Threading threading = new Threading();
+            threading.Run();
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Choose one of the problems:");
             Console.WriteLine("1 - Data Center");
             Console.WriteLine("2 - Lily's Homework");
+            Console.WriteLine("3 - Threading");
             Console.Write("> ");
             ConsoleKeyInfo key = Console.ReadKey();
             Console.WriteLine();
@@ -39,6 +47,7 @@
             {
                 case '1': RunDataCenter(); break;
                 case '2': RunLilysHomework(); break;
+                case '3': RunThreading(); break;
                 default: Console.WriteLine("Invalid choice");  break;
             }
         }
