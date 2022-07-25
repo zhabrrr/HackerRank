@@ -31,11 +31,18 @@
         {
             Console.WriteLine("Running the Threading task");
             Threading threading = new Threading();
-            threading.Run();
+            threading.TestAwaiter();
         }
 
         static void Main(string[] args)
         {
+            //int i = 1;
+            //object obj = i;
+            //++i;
+            //Console.WriteLine(i);
+            //Console.WriteLine(obj);
+            //return;
+
             Console.WriteLine("Choose one of the problems:");
             Console.WriteLine("1 - Data Center");
             Console.WriteLine("2 - Lily's Homework");
