@@ -30,8 +30,8 @@
         static void RunThreading()
         {
             Console.WriteLine("Running the Threading task");
-            Threading threading = new Threading();
-            threading.TestAwaiter();
+            Threading<int> threading = new Threading<int>();
+            threading.TestTaskCompletionSource();
         }
 
         static void Main(string[] args)
