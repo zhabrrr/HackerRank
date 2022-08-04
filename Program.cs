@@ -31,18 +31,13 @@
         {
             Console.WriteLine("Running the Threading task");
             Threading<int> threading = new Threading<int>();
-            threading.TestTaskCompletionSource();
+            threading.TestAwaitInLoop();
+            Console.WriteLine("The calling method has finished");
+            Console.ReadLine();
         }
 
         static void Main(string[] args)
         {
-            //int i = 1;
-            //object obj = i;
-            //++i;
-            //Console.WriteLine(i);
-            //Console.WriteLine(obj);
-            //return;
-
             Console.WriteLine("Choose one of the problems:");
             Console.WriteLine("1 - Data Center");
             Console.WriteLine("2 - Lily's Homework");

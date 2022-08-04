@@ -127,6 +127,48 @@ namespace HackerRank
             Task<int> task = Run(() => { Thread.Sleep(5000); return 42; });
             Console.WriteLine(task.Result);
         }
+
+        Task<int> GetPrimesCountAsync(int start, int count)
+        {
+            if (start == 5000000)
+                throw new Exception("Test exception at 5000000");
+
+            return Task.Run(() => ParallelEnumerable.Range(Math.Max(2, start), count).
+                          Count(n => Enumerable.Range(2, (int)Math.Sqrt(n) - 1).All(i => n % i > 0)));
+        }
+
+        async public void TestAwaitInLoop()
+        {
+            Console.WriteLine("The loop started");
+            try
+            {
+                for (int i = 0; i < 10; i++)
+                    Console.WriteLine("Found " + await GetPrimesCountAsync(i * 1000000, 1000000) + " primes between " + (i * 1000000) + " and " + ((i + 1) * 1000000 - 1));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("The loop finished");
+            }
+
+            CancellationTokenSource cancelSource = new CancellationTokenSource();
+            Task foo = Foo(cancelSource.Token);
+            //...
+            cancelSource.Cancel();
+
+            async Task Foo (CancellationToken cancellationToken)
+            {
+                for(int i = 0; i < 10; i++)
+                {
+                    Console.WriteLine(i);
+                    await Task.Delay(1000, cancellationToken);
+                }
+            }
+            //Task.Delay(1000).Wait();
+        }
     }
 }
 
