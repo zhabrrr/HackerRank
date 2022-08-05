@@ -44,6 +44,15 @@
             Console.WriteLine($"Result = {res}");
         }
 
+        static void RunFraudulentActivityNotifications()
+        {
+            FraudulentActivityNotifications fan = new FraudulentActivityNotifications();
+            List<int> exps = new List<int> { 10, 20, 30, 40, 50 };
+            Console.WriteLine($"Counting Fraudulent Activity Notifications");
+            int res = fan.CalcNotifications(exps, 3);
+            Console.WriteLine($"Result = {res}");
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Choose one of the problems:");
@@ -51,6 +60,7 @@
             Console.WriteLine("2 - Lily's Homework");
             Console.WriteLine("3 - Sherlock and the Valid String");
             Console.WriteLine("4 - Highest Value Palindrome");
+            Console.WriteLine("5 - Fraudulent Activity Notifications");
             Console.Write("> ");
             ConsoleKeyInfo key = Console.ReadKey();
             Console.WriteLine();
@@ -60,6 +70,7 @@
                 case '2': RunLilysHomework(); break;
                 case '3': RunSherlockValidString(); break;
                 case '4': RunMaxPalindrom(); break;
+                case '5': RunFraudulentActivityNotifications(); break;
                 default: Console.WriteLine("Invalid choice");  break;
             }
         }
